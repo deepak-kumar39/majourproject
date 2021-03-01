@@ -6,7 +6,6 @@ import {
   FaFacebook,
   FaInstagram,
   FaYoutube,
-  FaTwitter,
   FaLinkedin
 } from 'react-icons/fa';
 import { MdFingerprint } from 'react-icons/md';
@@ -50,14 +49,7 @@ function Footer() {
             >
               <FaYoutube />
             </Link>
-            <Link
-              className='social-icon-link'
-              to='/'
-              target='_blank'
-              aria-label='Twitter'
-            >
-              <FaTwitter />
-            </Link>
+            
             <Link
               className='social-icon-link'
               to='/'

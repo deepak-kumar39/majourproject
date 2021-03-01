@@ -8,19 +8,10 @@ function Register() {
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("First Name is required").matches(/^[A-Za-z\s]{1,}[.]{0,1}[A-Za-z\s]{0,}$/,"Name should be alphanumeric"),
     lastName: Yup.string().required("Last name is required").matches(/^[A-Za-z\s]{1,}[.]{0,1}[A-Za-z\s]{0,}$/,"Name should be alphanumeric"),
-    dob: Yup.string()
-      .required("Date of Birth is required")
-      .matches(
-        /^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/,
-        "Date of Birth must be a valid date in the format YYYY-MM-DD"
-      ),
+    
     email: Yup.string().required("Email is required").email("Email is invalid"),
-    password: Yup.string()
-      .min(6, "Password must be at least 6 characters")
-      .required("Password is required"),
-    confirmPassword: Yup.string()
-      .oneOf([Yup.ref("password"), null], "Passwords must match")
-      .required("Confirm Password is required"),
+    mobile: Yup.string().required("Mobile is required"),
+
     acceptTerms: Yup.bool().oneOf([true], "Accept Ts & Cs is required")
   });
 
@@ -35,9 +26,9 @@ function Register() {
   }
 
   return (
-  <div className="container" style={{fontSize:"20px"}}>
+  <div className="container" style={{color:"black", fontFamily:"fantasy",fontSize:"20px"}}>
     <div className="card m-3" style={{backgroundColor:"white", }}>
-      <h5 className="card-header">Register yourself</h5>
+      <h5 className="card-header">We are Happy to help you!</h5>
       <div className="card-bod" >
         <form onSubmit={handleSubmit(onSubmit)} onReset={reset}>
           <div className="form-row">
@@ -69,17 +60,7 @@ function Register() {
             </div>
           </div>
           <div className="form-row">
-            <div className="form-group col">
-              <label>Date of Birth</label>
-              <input
-                name="dob"
-                type="date"
-                ref={register}
-                className={`form-control ${errors.dob ? "is-invalid" : ""}`}
-              />
-              <div className="invalid-feedback">{errors.dob?.message}</div>
-            </div>
-            <div className="form-group col">
+          <div className="form-group col">
               <label>Email</label>
               <input
                 name="email"
@@ -89,55 +70,48 @@ function Register() {
               />
               <div className="invalid-feedback">{errors.email?.message}</div>
             </div>
-          </div>
-          <div className="form-row">
-            <div className="form-group col">
-              <label>Password</label>
+          <div className="form-group col">
+              <label>Mobile</label>
               <input
-                name="password"
-                type="password"
+                name="mobile"
+                type="number"
                 ref={register}
                 className={`form-control ${
-                  errors.password ? "is-invalid" : ""
-                }`}
-              />
-              <div className="invalid-feedback">{errors.password?.message}</div>
-            </div>
-            <div className="form-group col">
-              <label>Confirm Password</label>
-              <input
-                name="confirmPassword"
-                type="password"
-                ref={register}
-                className={`form-control ${
-                  errors.confirmPassword ? "is-invalid" : ""
+                  errors.mobile ? "is-invalid" : ""
                 }`}
               />
               <div className="invalid-feedback">
-                {errors.confirmPassword?.message}
+                {errors.mobile?.message}
               </div>
             </div>
+           
           </div>
-          <div className="form-group form-check">
-            <input
-              name="acceptTerms"
-              type="checkbox"
-              ref={register}
-              id="acceptTerms"
-              className={`form-check-input ${
-                errors.acceptTerms ? "is-invalid" : ""
-              }`}
-            />
-            <label for="acceptTerms" className="form-check-label">
-              Accept Terms & Conditions
-            </label>
-            <div className="invalid-feedback">
-              {errors.acceptTerms?.message}
+
+          <div className="form-row">
+          <div className="form-group col">
+             <div> <label>Choose related service</label></div>
+            <div> <select ref={register}>
+                 <option>Heavy luggage</option>
+                 <option>Small luggage</option>
+                 <option>Via Train</option>
+                 <option>Transport vis Ship</option>
+             </select>
+             </div>
             </div>
+          <div className="form-group col" style={{margin:"4px"}}>
+              <label>Message</label>
+             <div> <textarea ref={register} style={{width:"auto",height:"50px"}}/></div>
+              <div className="invalid-feedback">
+                {errors.message?.message}
+              </div>
+            </div>
+           
           </div>
+          
+          
           <div className="form-group">
             <button type="submit" className="btn btn-primary mr-1" onClick={register}>
-              Register
+              Send
             </button>
             <button className="btn btn-secondary" type="reset">
               Reset
