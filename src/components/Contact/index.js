@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import "../Contact/contact.css";
 
 function Register() {
   // form validation rules
@@ -26,7 +27,8 @@ function Register() {
   }
 
   return (
-  <div className="container" style={{color:"black", fontFamily:"fantasy",fontSize:"20px"}}>
+
+  <div className="container-fluid" style={{color:"black", fontFamily:"fantasy",fontSize:"20px"}}>
     <div className="card m-3" style={{backgroundColor:"white", }}>
       <h5 className="card-header">We are Happy to help you!</h5>
       <div className="card-bod" >

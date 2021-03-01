@@ -35,7 +35,7 @@ function Register() {
   }
 
   return (
-  <div className="container" style={{fontSize:"20px"}}>
+  <div className="container-fluid" style={{fontSize:"20px"}}>
     <div className="card m-3" style={{backgroundColor:"white", }}>
       <h5 className="card-header">Register yourself</h5>
       <div className="card-bod" >
