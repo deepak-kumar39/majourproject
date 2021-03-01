@@ -1,0 +1,38 @@
+
+.brand-name{
+    color:#f34e78;
+}
+.text{
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+
+.btn{
+    border-radius: 50px !important;
+}
+.btn:hover{
+    background: transparent;
+    color: black;
+    font-size: large;
+    transition: 0.5s;
+}
+
+.header-img{
+ text-align: right; 
+ 
+}
+.animated{
+    animation: up-down 1s ease-in-out infinite alternate-reverse both;
+}
+@keyframes up-down{
+    0%{
+        transform: translateY(20px);
+
+    }
+    100%{
+        transform: translateY((-20px));
+    }
+}

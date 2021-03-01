@@ -1,0 +1,11 @@
+.text-center{
+    margin-top: -2rem;
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+.service-section{
+    
+    background: linear-gradient(to left , #f53e14, #cf1b99);
+}
