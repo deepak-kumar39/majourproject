@@ -1,5 +1,5 @@
 import React from "react";
-import web from "../images/about2.png";
+import web from "../images/about3.png";
 import "../About/about.css";
 // import { NavLink } from "react-router-dom";
 import Common from "../Common/";
