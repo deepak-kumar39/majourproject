@@ -35,6 +35,7 @@ function Register() {
   }
 
   return (
+  <div className="container">
     <div className="card m-3" style={{backgroundColor:"white", }}>
       <h5 className="card-header">Register yourself</h5>
       <div className="card-bod" >
@@ -144,6 +145,7 @@ function Register() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 }

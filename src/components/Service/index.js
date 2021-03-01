@@ -3,9 +3,9 @@ import React from "react";
 import "../Service/services.css";
 import Card from "../Card/";
 import heavy from "../images/heavylugg.jpg";
-import ship from "../images/shipcargo.jpg";
+import ship from "../images/smallship.jpg";
 import small from "../images/smalllugg.jpg";
-import train from "../images/bytrain.jpg";
+import train from "../images/trainsmall.jpg";
 function Services() {
   return (
     

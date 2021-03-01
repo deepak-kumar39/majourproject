@@ -80,7 +80,7 @@ function Navbar() {
                     <Button buttonStyle='btn--outline'>SIGN UP</Button>
                   </Link>
                 ) : (
-                  <Link to='/sign-up' className='btn-link' style={{textDecoration:"none"}}>
+                  <Link to='/register' className='btn-link' style={{textDecoration:"none"}}>
                     <Button
                       buttonStyle='btn--outline'
                       buttonSize='btn--mobile'
