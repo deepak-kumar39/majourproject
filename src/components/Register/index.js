@@ -1,153 +1,97 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as Yup from "yup";
+import React, { useState } from "react";
+import LoginForm from "../LoginForm";
+import RegisterForm from "../RegisterForm";
+import register from "../images/register.svg";
+import login from "../images/login.svg";
+import "./register.css";
+const Register = () => {
+  //Starting------- Code of Login Section
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("All fields are mandatory");
+  const [allData, setAllData] = useState([]);
 
-function Register() {
-  // form validation rules
-  const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required("First Name is required").matches(/^[A-Za-z\s]{1,}[.]{0,1}[A-Za-z\s]{0,}$/,"Name should be alphanumeric"),
-    lastName: Yup.string().required("Last name is required").matches(/^[A-Za-z\s]{1,}[.]{0,1}[A-Za-z\s]{0,}$/,"Name should be alphanumeric"),
-    dob: Yup.string()
-      .required("Date of Birth is required")
-      .matches(
-        /^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/,
-        "Date of Birth must be a valid date in the format YYYY-MM-DD"
-      ),
-    email: Yup.string().required("Email is required").email("Email is invalid"),
-    password: Yup.string()
-      .min(6, "Password must be at least 6 characters")
-      .required("Password is required"),
-    confirmPassword: Yup.string()
-      .oneOf([Yup.ref("password"), null], "Passwords must match")
-      .required("Confirm Password is required"),
-    acceptTerms: Yup.bool().oneOf([true], "Accept Ts & Cs is required")
-  });
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
+  };
+  const storeData = (e) => {
+    if (!email && !password) {
+      setError("Complete all fields");
+      e.preventDefault();
+    } else if (!email || !password) {
+      if (!email) {
+        setError("Check Email");
+        e.preventDefault();
+      } else if (!password) {
+        setError("Password missing");
+        e.preventDefault();
+      }
+    } else {
+      const newEntry = {
+        id: new Date().getTime().toString(),
+        email: email,
+        password: password,
+      };
+      setAllData([...allData, newEntry]);
+      setEmail("");
+      setPassword("");
+      setError("All fields are mandatory");
+      e.preventDefault();
+    }
+  };
+  //Ending------- Code of Login Section
 
-  // functions to build form returned by useForm() hook
-  const { register, handleSubmit, reset, errors } = useForm({
-    resolver: yupResolver(validationSchema)
-  });
-
-  function onSubmit(data) {
-    // display form data on success
-    alert("SUCCESS!! :-)\n\n" + JSON.stringify(data, null, 4));
-  }
-
+  //Starting-------------Registration section code
+  //Ending-------------Registration section code
   return (
-  <div className="container-fluid" style={{fontSize:"20px"}}>
-    <div className="card m-3" style={{backgroundColor:"white", }}>
-      <h5 className="card-header">Register yourself</h5>
-      <div className="card-bod" >
-        <form onSubmit={handleSubmit(onSubmit)} onReset={reset}>
-          <div className="form-row">
-            <div className="form-group col">
-              <label>First Name</label>
-              <input
-                name="firstName"
-                type="text"
-                ref={register}
-                className={`form-control ${
-                  errors.firstName ? "is-invalid" : ""
-                }`}
-              />
-              <div className="invalid-feedback">
-                {errors.firstName?.message}
-              </div>
-            </div>
-            <div className="form-group col">
-              <label>Last Name</label>
-              <input
-                name="lastName"
-                type="text"
-                ref={register}
-                className={`form-control ${
-                  errors.lastName ? "is-invalid" : ""
-                }`}
-              />
-              <div className="invalid-feedback">{errors.lastName?.message}</div>
-            </div>
-          </div>
-          <div className="form-row">
-            <div className="form-group col">
-              <label>Date of Birth</label>
-              <input
-                name="dob"
-                type="date"
-                ref={register}
-                className={`form-control ${errors.dob ? "is-invalid" : ""}`}
-              />
-              <div className="invalid-feedback">{errors.dob?.message}</div>
-            </div>
-            <div className="form-group col">
-              <label>Email</label>
-              <input
-                name="email"
-                type="text"
-                ref={register}
-                className={`form-control ${errors.email ? "is-invalid" : ""}`}
-              />
-              <div className="invalid-feedback">{errors.email?.message}</div>
-            </div>
-          </div>
-          <div className="form-row">
-            <div className="form-group col">
-              <label>Password</label>
-              <input
-                name="password"
-                type="password"
-                ref={register}
-                className={`form-control ${
-                  errors.password ? "is-invalid" : ""
-                }`}
-              />
-              <div className="invalid-feedback">{errors.password?.message}</div>
-            </div>
-            <div className="form-group col">
-              <label>Confirm Password</label>
-              <input
-                name="confirmPassword"
-                type="password"
-                ref={register}
-                className={`form-control ${
-                  errors.confirmPassword ? "is-invalid" : ""
-                }`}
-              />
-              <div className="invalid-feedback">
-                {errors.confirmPassword?.message}
+    <>
+      <section id="register-section">
+        <h1 style={{textAlign:"center"}}>Register | Login</h1>
+        <div className="container">
+          <div className="row">
+            <div className="col-12 mx-auto">
+              <div className="row register">
+                <div className="col-lg-6  col-md-8 col-sm-12 pt-2 ">
+                  <RegisterForm/>
+                </div>
+                <div className="col-lg-6  col-md-4 col-sm-12">
+                  <img src={register} alt="noimage" className="img-fluid" />
+                </div>
               </div>
             </div>
           </div>
-          <div className="form-group form-check">
-            <input
-              name="acceptTerms"
-              type="checkbox"
-              ref={register}
-              id="acceptTerms"
-              className={`form-check-input ${
-                errors.acceptTerms ? "is-invalid" : ""
-              }`}
-            />
-            <label for="acceptTerms" className="form-check-label">
-              Accept Terms & Conditions
-            </label>
-            <div className="invalid-feedback">
-              {errors.acceptTerms?.message}
+        </div>
+      </section>
+      {/* <br />
+      <br /> */}
+      <section id="register-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 mx-auto">
+              <div className="row register">
+                <div className="col-lg-7  col-md-6 col-sm-12">
+                  <img src={login} alt="noimage" className="img-fluid" />
+                </div>
+                <div className="col-lg-5  col-md-6 col-sm-12 p-5">
+                  <LoginForm
+                    email={email}
+                    password={password}
+                    storeData={storeData}
+                    handleEmail={handleEmail}
+                    handlePassword={handlePassword}
+                    error={error}
+                  />
+                </div>
+              </div>
             </div>
           </div>
-          <div className="form-group">
-            <button type="submit" className="btn btn-primary mr-1" onClick={register}>
-              Register
-            </button>
-            <button className="btn btn-secondary" type="reset">
-              Reset
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-    </div>
+        </div>
+      </section>
+    </>
   );
-}
+};
 
 export default Register;

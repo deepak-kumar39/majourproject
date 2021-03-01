@@ -3,19 +3,17 @@
 }
 
 #home-header{
-    border: 5px solid black;
+
     color: #c5d7bd;
     width: 100%;
     background: #37517e;
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
 
  
-.btn{
-    border-radius: 50px !important;
-}
+
 .btn:hover{
     background: transparent;
     color: black;
@@ -27,15 +25,15 @@
 #home-header .animated{
     animation: up-down 1s ease-in-out infinite alternate-reverse both;
 }
-/* @keyframes up-down{
+@keyframes up-down{
     0%{
-        transform: translateY(20px);
+        transform: translateY(15px);
 
     }
     100%{
-        transform: translateY((-20px));
+        transform: translateY((-15px));
     }
-} */
+}
 
 
 

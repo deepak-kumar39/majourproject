@@ -1,0 +1,15 @@
+/* h1 {
+    margin-top: 4%;
+  } */
+  #register-section{
+      color: #fff;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background: #37517e;
+    height: 100vh;
+  }
+  .register {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }

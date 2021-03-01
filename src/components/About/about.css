@@ -18,9 +18,7 @@
 
 
  
-.btn{
-    border-radius: 50px !important;
-}
+
 .btn:hover{
     background: transparent;
     color: black;
@@ -34,43 +32,15 @@
 #header .animated{
     animation: up-down 1s ease-in-out infinite alternate-reverse both;
 }
-/* @keyframes up-down{
+@keyframes up-down{
     0%{
-        transform: translateY(20px);
+        transform: translateY(15px);
 
     }
     100%{
-        transform: translateY((-20px));
+        transform: translateY((-15px));
     }
-} */
-
-/* @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    /* #header{
-        color: #c5d7bd;
-        width: 100%;
-        font-size: small; */
-    
-        /* margin-bottom: 3px; */
-        /* margin-top: 6.5rem; */
-        /* background: #37517e; */
-        /* height: auto; */
-    /* } */
-  /* } */ 
-  /* Extra small devices (phones, 600px and down) */
-/* @media only screen and (max-width: 600px) {
-    #header{
-        color: #c5d7bd;
-        width: 100%;
-        font-size: small;
-    
-        /* margin-bottom: 3px; */
-        /* margin-top: 6.5rem; */
-        /* background: #37517e; */
-        /* height: 89vh; */
-    /* }
-} */ 
-
+}
 
 
 
