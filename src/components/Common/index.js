@@ -4,14 +4,15 @@ import "../Common/common.css";
 import { Link } from "react-router-dom";
 function Common(props) {
   return (
-    <>
-      
-        <div className="container-fluid ">
+    
+      <section className="d-flex align-items-center">
+        <div className="container-fluid " >
           <div className="row">
             <div className="col-10 mx-auto">
                 <div className="row">
               <div id="header-text" className="col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 mt-3">
                 <h1 className="text">
+                  
                  {props.name}
                   <strong className="brand-name"> LMS</strong>
                 
@@ -27,8 +28,8 @@ function Common(props) {
             </div>
           </div>
         </div>
+        </section>
     
-    </>
   );
 }
 

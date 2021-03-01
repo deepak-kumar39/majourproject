@@ -1,5 +1,42 @@
-
-.home-section{
-    background: linear-gradient(to left , #f53e14, #cf1b99);
-    height: 100vh;
+.brand-name{
+    color:#fff;
 }
+
+#home-header{
+    border: 5px solid black;
+    color: #c5d7bd;
+    width: 100%;
+    background: #37517e;
+    height: 100vh;
+
+}
+
+
+ 
+.btn{
+    border-radius: 50px !important;
+}
+.btn:hover{
+    background: transparent;
+    color: black;
+    font-size: large;
+    transition: 0.5s;
+}
+
+
+#home-header .animated{
+    animation: up-down 1s ease-in-out infinite alternate-reverse both;
+}
+/* @keyframes up-down{
+    0%{
+        transform: translateY(20px);
+
+    }
+    100%{
+        transform: translateY((-20px));
+    }
+} */
+
+
+
+

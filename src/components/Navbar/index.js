@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
+import { Button } from '../Button';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import '../Navbar/navbar.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 
@@ -100,3 +100,69 @@ function Navbar() {
 }
 
 export default Navbar;
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+// // import logo from "../images/logo.png";
+// import ListItem from "../ListItem";
+// import "../Navbar/navbar.css";
+// const Navbar = () => {
+//   const pageName = ["Home", "About", "Contact", "Services"];
+//   const pageArray = ["/", "/about", "/contact", "/services"];
+//   return (
+//     <>
+//       {/* <div className="container-fluid"> */}
+//       <div className="container-fluid nav_bg">
+//         <div className="row">
+//           <div className="col-10 mx-auto"></div>
+//           <nav className="navbar navbar-expand-lg navbar-light bg-light">
+//             <div className="container-fluid">
+//               <Link className="navbar-brand" to="/">
+//                 {/* <img
+//                   src={logo}
+//                   alt=""
+//                   width="60"
+//                   height="45"
+//                   className="d-inline-block "
+//                 /> */}
+//                 LMS
+//               </Link>
+//               <button
+//                 className="navbar-toggler"
+//                 type="button"
+//                 data-bs-toggle="collapse"
+//                 data-bs-target="#navbarNav"
+//                 aria-controls="navbarNav"
+//                 aria-expanded="false"
+//                 aria-label="Toggle navigation"
+//               >
+//                 <span className="navbar-toggler-icon"></span>
+//               </button>
+//               <div
+//                 className="collapse navbar-collapse text-center"
+//                 id="navbarNav"
+//               >
+//                 <ul className="navbar-nav ms-auto ">
+//                   {pageArray.map((li, ind) => {
+//                     return (
+//                       <ListItem
+//                         key={ind}
+//                         linkName={pageName[ind]}
+//                         to={pageArray[ind]}
+//                       />
+//                     );
+//                   })}
+//                 </ul>
+//               </div>
+//             </div>
+//           </nav>
+//         </div>
+//       </div>
+
+//       {/* </div> */}
+//     </>
+//   );
+// };
+
+// export default Navbar;
+

@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./components/Home/";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar/"
 import Footer from './components/Footer';
 import Service from "./components/Service/";
 import About from "./components/About/";
@@ -24,7 +24,7 @@ function App() {
         {/* <Route path='/products' component={Products} /> */}
         {/* <Route path='/sign-up' component={SignUp} /> */}
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </Router> 
   );
 }

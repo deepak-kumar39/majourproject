@@ -1,6 +1,6 @@
 .footer-container {
   background: #fff;
-  padding: 0 0 0 0;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,10 +15,12 @@
   max-width: 1000px;
   display: flex;
   justify-content: center;
+  
 }
 
 .footer-link-wrapper {
   display: flex;
+
 }
 
 .footer-link-items {
@@ -32,7 +34,7 @@
 }
 
 .footer-link-items h2 {
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 .footer-link-items > h2 {
@@ -45,9 +47,6 @@
   margin-bottom: 0.5rem;
 }
 
-.footer-email-form h2 {
-  margin-bottom: 2rem;
-}
 
 .footer-input::placeholder {
   color: #b1b1b1;
@@ -82,8 +81,8 @@
 
 .social-logo {
   color: #242424;
-  justify-self: start;
-  margin-left: 20px;
+  justify-self: center;
+  /* margin-left: 20px; */
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
