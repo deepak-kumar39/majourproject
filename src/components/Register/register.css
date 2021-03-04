@@ -7,9 +7,43 @@
       background: #37517e;
     height: 100vh;
   }
+  #register-section2{
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #fff;
+height: 100vh;
+margin-top: 8rem;
+  }
   .register {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    
   }
+  #mobilehide{
+    display: none;
+  }
+  @media (min-width:801px)  { 
+    #mobilehide{
+      display: block;
+
+    }
+    #register-section2{
+      margin-top: 0;
+    }
+  }
+@media (min-width:1025px) { 
+  #mobilehide{
+    display: block;
+  }
+  #register-section2{
+    margin-top: 0;
+  }/* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) {
+  #mobilehide{
+    display: block;
+  }
+  #register-section2{
+    margin-top: 0;
+  } /* hi-res laptops and desktops */ }

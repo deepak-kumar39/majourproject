@@ -1,18 +1,17 @@
 .brand-name{
-    color:#fff;
+    color:#121013;
     font-size: 3rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 700;
 }
 
 #header{
-    color: #c5d7bd;
+    color: #121013;
     width: 100%;
     font-size: small;
     height: 100vh;
     /* margin-bottom: 3px; */
     /* margin-top: 6.5rem; */
-    background: #37517e;
+    background: #fff;
 
 }
 
@@ -21,7 +20,7 @@
 
 .btn:hover{
     background: transparent;
-    color: black;
+    color: #121013;
     font-size: large;
     transition: 0.5s;
 }

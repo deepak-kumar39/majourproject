@@ -67,13 +67,13 @@ const Register = () => {
       </section>
       {/* <br />
       <br /> */}
-      <section id="register-section">
+      <section id="register-section2">
         <div className="container">
           <div className="row">
             <div className="col-12 mx-auto">
               <div className="row register">
                 <div className="col-lg-7  col-md-6 col-sm-12">
-                  <img src={login} alt="noimage" className="img-fluid" />
+                  <img src={login} alt="noimage" className="img-fluid" id="mobilehide"/>
                 </div>
                 <div className="col-lg-5  col-md-6 col-sm-12 p-5">
                   <LoginForm
